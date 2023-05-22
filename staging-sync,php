@@ -22,10 +22,10 @@ add_action('wp_enqueue_scripts', 'staging_sync_enqueue_scripts');
 
 function staging_sync_enqueue_scripts() {
     // Enqueue plugin's JavaScript file
-    wp_enqueue_script('staging-sync-script', plugin_dir_url(__FILE__) . 'js/staging-sync.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('staging-sync-script', plugin_dir_url(__FILE__) . 'assets/js/staging-sync.js', array('jquery'), '1.0.0', true);
 
     // Enqueue plugin's CSS file
-    wp_enqueue_style('staging-sync-style', plugin_dir_url(__FILE__) . 'css/staging-sync.css', array(), '1.0.0');
+    wp_enqueue_style('staging-sync-style', plugin_dir_url(__FILE__) . 'assets/css/staging-sync.css', array(), '1.0.0');
 }
 
 
