@@ -71,37 +71,6 @@ function staging_sync_settings_page() {
             </table>
         </form>
     </div>
-
-    <script>
-    jQuery(document).ready(function($) {
-        $('#staging-sync-check-connection').click(function() {
-            var stagingSiteUrl = $('#staging-site-url').val();
-
-            // Send an AJAX request to check the connection.
-            $.ajax({
-                url: ajaxurl,
-                type: 'POST',
-                data: {
-                    action: 'staging_sync_check_connection',
-                    staging_site_url: stagingSiteUrl,
-                },
-                beforeSend: function() {
-                    $('#staging-sync-connection-status').html('<span class="spinner"></span> Checking connection...');
-                },
-                success: function(response) {
-                    if (response === 'success') {
-                        $('#staging-sync-connection-status').html('<span class="dashicons dashicons-yes"></span> Connection successful.');
-                    } else {
-                        $('#staging-sync-connection-status').html('<span class="dashicons dashicons-no"></span> Connection failed.');
-                    }
-                },
-                error: function() {
-                    $('#staging-sync-connection-status').html('<span class="dashicons dashicons-no"></span> Connection failed.');
-                }
-            });
-        });
-    });
-    </script>
     <?php
 }
 
